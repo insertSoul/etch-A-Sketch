@@ -1,4 +1,11 @@
 .gridContainer {
-    width: 900px;
-    height: 900px;
+    width: 500px;
+    height: 500px;
+    display: flex;
+}
+.gridSquare{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
 }

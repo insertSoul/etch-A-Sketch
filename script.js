@@ -19,12 +19,16 @@
 // this is where we could implement the ability to change grid size
 const girdContainer = document.querySelector('.gridContainer')
 function makeGrid () {
-    for (let i=0; i>16; i++) {
+    for (let i=0; i < 16; i++) {
         const gridSquareColunm = document.createElement('div');
-        girdContainer.appendChild(gridSquare);
-        for (let j=0; j>16;) {
+        //gridSquareColunm.className = 'gridSquare'
+        girdContainer.appendChild(gridSquareColunm);
+        for (let j=1; j < 16; j++) {
             const gridSquareRow = document.createElement('div');
+            gridSquareRow.className= 'gridSquare'
             gridSquareColunm.appendChild(gridSquareRow);
         }
     }
 }
+
+makeGrid();
