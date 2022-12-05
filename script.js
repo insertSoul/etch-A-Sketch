@@ -17,6 +17,8 @@
 
 // Need to create a way for clearing the grid
 // this is where we could implement the ability to change grid size
+
+
 const girdContainer = document.querySelector('.gridContainer')
 function makeGrid () {
     for (let i=0; i < 16; i++) {
@@ -32,3 +34,10 @@ function makeGrid () {
 }
 
 makeGrid();
+
+const allGridSquares = document.querySelectorAll('.gridSquare')
+allGridSquares.forEach((gridSquare) => {
+    gridSquare.addEventListener("mouseover", () => {
+        gridSquare.style.backgroundColor = "black";
+    });
+});
