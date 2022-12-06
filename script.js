@@ -19,13 +19,14 @@
 // this is where we could implement the ability to change grid size
 
 
-const girdContainer = document.querySelector('.gridContainer')
-function makeGrid () {
-    for (let i=0; i < 16; i++) {
+const gridContainer = document.querySelector('.gridContainer')
+
+function makeGrid (gridWidth = 16, gridHeight = 16) {
+    for (let i=0; i < gridHeight; i++) {
         const gridSquareColunm = document.createElement('div');
-        //gridSquareColunm.className = 'gridSquare'
-        girdContainer.appendChild(gridSquareColunm);
-        for (let j=1; j < 16; j++) {
+        gridSquareColunm.className= 'gridColunm'
+        gridContainer.appendChild(gridSquareColunm);
+        for (let j=1; j < gridWidth; j++) {
             const gridSquareRow = document.createElement('div');
             gridSquareRow.className= 'gridSquare'
             gridSquareColunm.appendChild(gridSquareRow);
@@ -33,11 +34,26 @@ function makeGrid () {
     }
 }
 
-makeGrid();
+function makeCustomGrid() {
+    //removes last grid
+    while (gridContainer.firstChild) {
+        gridContainer.removeChild(gridContainer.firstChild);
+    }
+    let newWidth = prompt('Set a new Width');
+    let newHeight = prompt('set a new Height');
+    return makeGrid(newWidth, newHeight);
+}
 
+makeGrid(16, 16);
+
+//Static nodeList problem, work out how to make live
 const allGridSquares = document.querySelectorAll('.gridSquare')
 allGridSquares.forEach((gridSquare) => {
     gridSquare.addEventListener("mouseover", () => {
         gridSquare.style.backgroundColor = "black";
+        console.log('test')
     });
 });
+
+const gridSizeButton = document.querySelector('.gridSizeButton')
+gridSizeButton.addEventListener('click', makeCustomGrid)
