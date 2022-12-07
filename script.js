@@ -32,28 +32,36 @@ function makeGrid (gridWidth = 16, gridHeight = 16) {
             gridSquareColunm.appendChild(gridSquareRow);
         }
     }
+    drawOnGrid();
 }
 
 function makeCustomGrid() {
-    //removes last grid
+    RemoveLastGrid();
+    const newWidth = prompt('Set a new Width');
+    const newHeight = prompt('set a new Height');
+    makeGrid(newWidth, newHeight);
+    allGridSquares = document.querySelectorAll('.gridSquare');
+}
+
+function RemoveLastGrid() {
     while (gridContainer.firstChild) {
         gridContainer.removeChild(gridContainer.firstChild);
     }
-    let newWidth = prompt('Set a new Width');
-    let newHeight = prompt('set a new Height');
-    return makeGrid(newWidth, newHeight);
 }
 
 makeGrid(16, 16);
 
 //Static nodeList problem, work out how to make live
-const allGridSquares = document.querySelectorAll('.gridSquare')
-allGridSquares.forEach((gridSquare) => {
-    gridSquare.addEventListener("mouseover", () => {
-        gridSquare.style.backgroundColor = "black";
-        console.log('test')
+function drawOnGrid() {
+    let allGridSquares = document.querySelectorAll('.gridSquare');
+    allGridSquares.forEach((gridSquare) => {
+        gridSquare.addEventListener("mouseover", () => {
+            gridSquare.style.backgroundColor = "black";
+            console.log('test')
+        });
     });
-});
+}
+
 
 const gridSizeButton = document.querySelector('.gridSizeButton')
 gridSizeButton.addEventListener('click', makeCustomGrid)
