@@ -26,7 +26,7 @@ function makeGrid (gridWidth = 16, gridHeight = 16) {
         const gridSquareColunm = document.createElement('div');
         gridSquareColunm.className= 'gridColunm'
         gridContainer.appendChild(gridSquareColunm);
-        for (let j=1; j < gridWidth; j++) {
+        for (let j=0; j < gridWidth; j++) {
             const gridSquareRow = document.createElement('div');
             gridSquareRow.className= 'gridSquare'
             gridSquareColunm.appendChild(gridSquareRow);
