@@ -8,6 +8,7 @@
         // repeat that row down 16 (loop in loop) (column)
             //(make 16 a changeable variable to make custom grid?)
             // would need to adjust size of squares so it would fit in total space
+            //(squareLength = containerLength/num of squares)
     
 
 
@@ -21,15 +22,16 @@
 
 const gridContainer = document.querySelector('.gridContainer')
 
-function makeGrid (gridWidth = 16, gridHeight = 16) {
-    for (let i=0; i < gridHeight; i++) {
+function makeGrid (numOfGridRows = 16, numOfGridColumns = 16) {
+    for (let i=0; i < numOfGridRows; i++) {
         const gridSquareColunm = document.createElement('div');
         gridSquareColunm.className= 'gridColunm'
         gridContainer.appendChild(gridSquareColunm);
-        for (let j=0; j < gridWidth; j++) {
+        for (let j=0; j < numOfGridColumns; j++) {
             const gridSquareRow = document.createElement('div');
             gridSquareRow.className= 'gridSquare'
             gridSquareColunm.appendChild(gridSquareRow);
+            //document.getElementsByClassName('gridSquare').setAttribute("style", "width:", "height:")
         }
     }
     drawOnGrid();
@@ -37,9 +39,9 @@ function makeGrid (gridWidth = 16, gridHeight = 16) {
 
 function makeCustomGrid() {
     RemoveLastGrid();
-    const newWidth = prompt('Set a new Width');
-    const newHeight = prompt('set a new Height');
-    makeGrid(newWidth, newHeight);
+    const newNumOfRows = prompt('Set a new Width');
+    const newNumOfColumns = prompt('set a new Height');
+    makeGrid(newNumOfRows, newNumOfColumns);
     allGridSquares = document.querySelectorAll('.gridSquare');
 }
 
