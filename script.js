@@ -22,12 +22,12 @@
 
 const gridContainer = document.querySelector('.gridContainer')
 
-function makeGrid (numOfGridRows = 16, numOfGridColumns = 16) {
-    for (let i=0; i < numOfGridRows; i++) {
+function makeGrid (numOfGridColumns = 16, numOfGridRows = 16) {
+    for (let i=0; i < numOfGridColumns; i++) {
         const gridSquareColunm = document.createElement('div');
         gridSquareColunm.className= 'gridColunm'
         gridContainer.appendChild(gridSquareColunm);
-        for (let j=0; j < numOfGridColumns; j++) {
+        for (let j=0; j < numOfGridRows; j++) {
             const gridSquareRow = document.createElement('div');
             gridSquareRow.className= 'gridSquare'
             gridSquareColunm.appendChild(gridSquareRow);
@@ -39,9 +39,9 @@ function makeGrid (numOfGridRows = 16, numOfGridColumns = 16) {
 
 function makeCustomGrid() {
     RemoveLastGrid();
-    const newNumOfRows = prompt('Set a new Width');
-    const newNumOfColumns = prompt('set a new Height');
-    makeGrid(newNumOfRows, newNumOfColumns);
+    const newNumOfColumns = prompt('Set a new Width');
+    const newNumOfRows = prompt('set a new Height');
+    makeGrid(newNumOfColumns, newNumOfRows);
     allGridSquares = document.querySelectorAll('.gridSquare');
 }
 
