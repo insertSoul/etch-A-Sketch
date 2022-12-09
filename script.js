@@ -25,15 +25,15 @@ const gridContainer = document.querySelector('.gridContainer')
 function makeGrid (numOfGridColumns = 16, numOfGridRows = 16) {
     for (let i=0; i < numOfGridColumns; i++) {
         const gridSquareColunm = document.createElement('div');
-        gridSquareColunm.className= 'gridColunm'
+        gridSquareColunm.className= 'gridColunm';
         gridContainer.appendChild(gridSquareColunm);
         for (let j=0; j < numOfGridRows; j++) {
             const gridSquareRow = document.createElement('div');
-            gridSquareRow.className= 'gridSquare'
+            gridSquareRow.className= 'gridSquare';
             gridSquareColunm.appendChild(gridSquareRow);
-            //document.getElementsByClassName('gridSquare').setAttribute("style", "width:", "height:")
         }
     }
+    scaleGridSize(numOfGridColumns, numOfGridRows);
     drawOnGrid();
 }
 
@@ -51,9 +51,20 @@ function RemoveLastGrid() {
     }
 }
 
+
+function scaleGridSize (numOfGridColumns, numOfGridRows) {
+    gridSquareWidth = (500 / numOfGridColumns);
+    gridSquareHeight = (500 / numOfGridRows);
+    let allGridSquares = document.querySelectorAll('.gridSquare');
+    allGridSquares.forEach((gridSquare) => {
+        gridSquare.style.width = `${gridSquareWidth}px`
+        gridSquare.style.height = `${gridSquareHeight}px`
+    });
+  
+}
+
 makeGrid(16, 16);
 
-//Static nodeList problem, work out how to make live
 function drawOnGrid() {
     let allGridSquares = document.querySelectorAll('.gridSquare');
     allGridSquares.forEach((gridSquare) => {
@@ -67,3 +78,12 @@ function drawOnGrid() {
 
 const gridSizeButton = document.querySelector('.gridSizeButton')
 gridSizeButton.addEventListener('click', makeCustomGrid)
+
+
+/*
+  let allGridSquares = document.getElementsByClassName('gridSquare');
+    allGridSquares.forEach((gridSquare) => {
+        gridSquare.setAttribute("style", `width:${gridSquareWidth};  height:${gridSquareHeight}`)
+    });
+
+    */
