@@ -1,11 +1,57 @@
-.gridContainer {
-    width: 500px;
-    height: 500px;
+*{
+    font-family:"8BIT WONDER", "JetBrains Mono", Impact;
+}
+.title {
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.centerSection{
+    display: flex;
+    height: 740px;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.gridPlacement{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.gridContainer {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .gridSquare{
     height: 10px;
     width: 10px;
     background-color: rgb(255, 255, 255);
     border: 0.5px solid black;    
+}
+.allButtons{
+    display: flex;
+    max-width: 150px;
+    
+
+}
+.gridSizeButton{
+    margin: 20px;
+    border-radius: 20px;
+    max-height: 3rem;
+}
+.pixelArt{
+    display: flex;
+    flex-direction: column;
+    max-width: 100px;
+    margin: 30px 50px 20px 20px;
+    
+}
+.placeHolder{
+    margin: 20px;
+    padding: 50px;
+    background-color: black;
 }
