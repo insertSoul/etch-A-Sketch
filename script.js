@@ -53,8 +53,8 @@ function RemoveLastGrid() {
 
 
 function scaleGridSize (numOfGridColumns, numOfGridRows) {
-    gridSquareWidth = (600 / numOfGridColumns);
-    gridSquareHeight = (600 / numOfGridRows);
+    gridSquareWidth = (700 / numOfGridColumns);
+    gridSquareHeight = (700 / numOfGridRows);
     let allGridSquares = document.querySelectorAll('.gridSquare');
     allGridSquares.forEach((gridSquare) => {
         gridSquare.style.width = `${gridSquareWidth}px`
