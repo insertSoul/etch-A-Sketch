@@ -79,6 +79,16 @@ function drawOnGrid() {
 const gridSizeButton = document.querySelector('.gridSizeButton')
 gridSizeButton.addEventListener('click', makeCustomGrid)
 
+let allGridSquares = document.querySelectorAll('.gridSquare');
+const removeGrid = document.querySelector('.removeGrid')
+removeGrid.addEventListener('click', () => {
+    allGridSquares.forEach((gridSquare) => {
+        gridSquare.classList.toggle('gridSquareNoBorder')
+        gridSquare.classList.toggle('gridSquare')
+        console.log('secondTest')
+    });
+})
+
 
 /*
   let allGridSquares = document.getElementsByClassName('gridSquare');
