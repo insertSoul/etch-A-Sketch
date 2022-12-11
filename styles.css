@@ -46,8 +46,10 @@
 .pixelArt{
     display: flex;
     flex-direction: column;
-    max-width: 100px;
-    margin: 30px 50px 20px 20px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 150px;
+    margin: 30px 50px 20px 40px;
     
 }
 .placeHolder{
