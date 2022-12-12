@@ -89,6 +89,13 @@ removeGrid.addEventListener('click', () => {
     });
 })
 
+const resetGrid = document.querySelector('.resetGrid')
+resetGrid.addEventListener('click', () => {
+    allGridSquares.forEach((gridSquare) => {
+        gridSquare.style.backgroundColor = "white";
+    });
+});
+
 
 /*
   let allGridSquares = document.getElementsByClassName('gridSquare');
