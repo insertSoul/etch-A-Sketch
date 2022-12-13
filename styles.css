@@ -51,6 +51,7 @@
 .resetGrid{
     padding: 50px 20px;
     border-radius: 20px;
+    box-shadow: 10px 10px;
 }
 .pixelArt{
     display: flex;
@@ -61,3 +62,15 @@
     margin: 30px 50px 20px 60px;
     
 }
+.gridSizeButton:hover,
+.removeGrid:hover,
+.resetGrid:hover{
+    background-color: rgb(92, 92, 92);
+}
+.gridSizeButton:active,
+.removeGrid:active,
+.resetGrid:active{
+    transform: translateX(10px) translateY(10px);
+    box-shadow: 0 0;
+}
+
