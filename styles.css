@@ -46,13 +46,6 @@
     
 
 }
-.gridSizeButton,
-.removeGrid,
-.resetGrid{
-    padding: 50px 20px;
-    border-radius: 20px;
-    box-shadow: 10px 10px;
-}
 .pixelArt{
     display: flex;
     flex-direction: column;
@@ -62,14 +55,24 @@
     margin: 30px 50px 20px 60px;
     
 }
+.gridSizeButton,
+.removeGrid,
+.resetGrid,
+.randomGridButton{
+    padding: 50px 20px;
+    border-radius: 20px;
+    box-shadow: 10px 10px;
+}
 .gridSizeButton:hover,
 .removeGrid:hover,
-.resetGrid:hover{
+.resetGrid:hover,
+.randomGridButton:hover{
     background-color: rgb(92, 92, 92);
 }
 .gridSizeButton:active,
 .removeGrid:active,
-.resetGrid:active{
+.resetGrid:active
+.randomGridButton:active{
     transform: translateX(10px) translateY(10px);
     box-shadow: 0 0;
 }

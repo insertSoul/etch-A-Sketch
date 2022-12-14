@@ -38,14 +38,14 @@ function makeGrid (numOfGridColumns = 16, numOfGridRows = 16) {
 }
 
 function makeCustomGrid() {
-    RemoveLastGrid();
+    removeLastGrid();
     const newNumOfColumns = prompt('Set a new Width');
     const newNumOfRows = prompt('set a new Height');
     makeGrid(newNumOfColumns, newNumOfRows);
     allGridSquares = document.querySelectorAll('.gridSquare');
 }
 
-function RemoveLastGrid() {
+function removeLastGrid() {
     while (gridContainer.firstChild) {
         gridContainer.removeChild(gridContainer.firstChild);
     }
@@ -63,7 +63,6 @@ function scaleGridSize (numOfGridColumns, numOfGridRows) {
   
 }
 
-makeGrid(16, 16);
 
 function drawOnGrid() {
     let allGridSquares = document.querySelectorAll('.gridSquare');
@@ -75,6 +74,16 @@ function drawOnGrid() {
     });
 }
 
+function createRandomGrid() {
+    removeLastGrid();
+    let randomColumn = Math.floor(Math.random() * 99 + 1);
+    let randomRow = Math.floor(Math.random() * 99 + 1);
+    scaleGridSize()
+    makeGrid(randomColumn, randomRow);
+
+}
+
+makeGrid(16, 16);
 
 const gridSizeButton = document.querySelector('.gridSizeButton')
 gridSizeButton.addEventListener('click', makeCustomGrid)
@@ -95,6 +104,9 @@ resetGrid.addEventListener('click', () => {
         gridSquare.style.backgroundColor = "white";
     });
 });
+
+const randomButton = document.querySelector('.randomGridButton')
+randomButton.addEventListener('click', createRandomGrid)
 
 
 /*
