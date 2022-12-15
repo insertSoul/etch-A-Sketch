@@ -80,7 +80,15 @@ function createRandomGrid() {
     let randomRow = Math.floor(Math.random() * 99 + 1);
     scaleGridSize()
     makeGrid(randomColumn, randomRow);
+    allGridSquares = document.querySelectorAll('.gridSquare');
 
+}
+function removeGridLines() {
+    let allGridSquares = document.querySelectorAll('.gridSquare');
+    allGridSquares.forEach((gridSquare) => {
+        gridSquare.classList.toggle('gridSquareNoBorder')
+        console.log('secondTest')
+    });
 }
 
 makeGrid(16, 16);
@@ -88,16 +96,12 @@ makeGrid(16, 16);
 const gridSizeButton = document.querySelector('.gridSizeButton')
 gridSizeButton.addEventListener('click', makeCustomGrid)
 
-let allGridSquares = document.querySelectorAll('.gridSquare');
-const removeGrid = document.querySelector('.removeGrid')
-removeGrid.addEventListener('click', () => {
-    allGridSquares.forEach((gridSquare) => {
-        gridSquare.classList.toggle('gridSquareNoBorder')
-        gridSquare.classList.toggle('gridSquare')
-        console.log('secondTest')
-    });
-})
 
+const removeGrid = document.querySelector('.removeGrid')
+removeGrid.addEventListener('click', removeGridLines)
+
+
+let allGridSquares = document.querySelectorAll('.gridSquare');
 const resetGrid = document.querySelector('.resetGrid')
 resetGrid.addEventListener('click', () => {
     allGridSquares.forEach((gridSquare) => {

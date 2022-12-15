@@ -71,7 +71,7 @@
 }
 .gridSizeButton:active,
 .removeGrid:active,
-.resetGrid:active
+.resetGrid:active,
 .randomGridButton:active{
     transform: translateX(10px) translateY(10px);
     box-shadow: 0 0;
