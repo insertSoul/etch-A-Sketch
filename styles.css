@@ -40,7 +40,11 @@
 .allButtons{
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap-reverse;
+   align-items: center;
     max-width: 150px;
+    max-height: 740px;
+    margin-top: 30px;
     margin-right: 20px;
     gap: 40px;
     
@@ -58,7 +62,8 @@
 .gridSizeButton,
 .removeGrid,
 .resetGrid,
-.randomGridButton{
+.randomGridButton,
+.colorPickerButton{
     padding: 50px 20px;
     border-radius: 20px;
     box-shadow: 10px 10px;
@@ -66,13 +71,15 @@
 .gridSizeButton:hover,
 .removeGrid:hover,
 .resetGrid:hover,
-.randomGridButton:hover{
+.randomGridButton:hover,
+.colorPickerButton:hover{
     background-color: rgb(92, 92, 92);
 }
 .gridSizeButton:active,
 .removeGrid:active,
 .resetGrid:active,
-.randomGridButton:active{
+.randomGridButton:active,
+.colorPickerButton:active{
     transform: translateX(10px) translateY(10px);
     box-shadow: 0 0;
 }

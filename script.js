@@ -63,12 +63,16 @@ function scaleGridSize (numOfGridColumns, numOfGridRows) {
   
 }
 
+function colorSelected (element) {
+    newColor = element.value
+    drawOnGrid(newColor)
+}
 
-function drawOnGrid() {
+function drawOnGrid(color = "black") {
     let allGridSquares = document.querySelectorAll('.gridSquare');
     allGridSquares.forEach((gridSquare) => {
         gridSquare.addEventListener("mouseover", () => {
-            gridSquare.style.backgroundColor = "black";
+            gridSquare.style.backgroundColor = color;
             console.log('test')
         });
     });
