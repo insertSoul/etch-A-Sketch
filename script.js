@@ -116,6 +116,8 @@ resetGrid.addEventListener('click', () => {
 const randomButton = document.querySelector('.randomGridButton')
 randomButton.addEventListener('click', createRandomGrid)
 
+document.body.style.zoom = "80%";
+
 
 /*
   let allGridSquares = document.getElementsByClassName('gridSquare');
